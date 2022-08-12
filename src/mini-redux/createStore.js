@@ -1,3 +1,11 @@
+/**
+ * 创建store对象
+ *
+ * @param {function} reducer
+ * @param {*} preloadedState
+ * @param {function} enhancer
+ * @returns store对象
+ */
 export default function createStore(reducer, preloadedState, enhancer) {
   // 当省略了preloadedState，直接传入enhancer时
   if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
