@@ -1,4 +1,15 @@
 export default function createStore(reducer, preloadedState, enhancer) {
+  // 当省略了preloadedState，直接传入enhancer时
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState;
+    preloadedState = undefined;
+  }
+
+  // 如果传入了enhancer，就返回enhancer
+  if (typeof enhancer === 'function') {
+    return enhancer(createStore)(reducer, preloadedState);
+  }
+
   // 初始化状态和监听器
   let state = preloadedState;
   const listeners = [];
