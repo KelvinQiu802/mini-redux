@@ -2,10 +2,10 @@
 
 ## APIs
 
-- **createStores()**
+- **createStore()**
   - getState()
   - dispatch()
-  - describe()
+  - subscribe()
 - **combineReducers()**
 - **compose()**
 - **applyMiddleware()**
